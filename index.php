@@ -1,4 +1,8 @@
 <?php
 
-$a = "PHP rất xàm";
-var_dump($a);
+$a = array("Bảo", "Phúc", "Thành");
+
+foreach ($a as $in) {
+    echo $in . "<br>";
+}
+;
