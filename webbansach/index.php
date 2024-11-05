@@ -124,7 +124,8 @@
                         </tr>
                     </table>
                 </td>
-                <td valign="top" bgcolor="#FFFFFF">
+                <td valign="top" bgcolor="#FFFFFF"
+                    style="text-align: center; vertical-align: middle; background-color: white;">
 
                     <?php
                     if (isset($_GET['page'])) {
@@ -173,9 +174,9 @@
                             default:
                                 echo "<p>Nội dung không tồn tại.</p>";
                         }
-                    } else {
-                        echo "<p>Chào mừng bạn đến với trang chủ.</p>";
-                    }
+                    } else 
+                        include 'homePage.php'
+                    
                 ?>
 
                     <!-- footer -->
