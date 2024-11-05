@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+a{
+	color:#060;
+	text-decoration:none;
+	display:block;
+}
+a:hover{
+	color:#fff;
+	font-weight:bold;
+	text-decoration:underline;
+	background-color:#F90;
+}
+a:active{
+	font-weight:bold;
+	color:#F60;
+}
+
+#thuong{
+	color:#060;
+	text-decoration:none;
+}
