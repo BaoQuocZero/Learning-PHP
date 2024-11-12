@@ -25,7 +25,7 @@
 
 <body bgcolor="#999999">
     <center>
-        <table width="1000" border="1" cellspacing="0" bordercolor="#003300" cellpadding="0"
+        <table width="90%" border="1" cellspacing="0" bordercolor="#003300" cellpadding="0"
             style="box-shadow: #6C0 0px 30px 150px;">
             <!-- Header -->
             <?php include 'header.php'?>
@@ -54,6 +54,9 @@
                         <tr>
                             <td><a href="?page=getSach">Tất cả Sách</a></td>
                         </tr>
+                        <tr>
+                            <td><a href="?page=create_book">Thêm Sách</a></td>
+                        </tr>
                     </table>
                 </td>
                 <td valign="top" bgcolor="#FFFFFF"
@@ -64,7 +67,10 @@
                         $page = $_GET['page'];
                         switch ($page) {
                             case 'getSach':
-                                include 'getSach.php'; // Tệp chứa nội dung cho BT1
+                                include 'getSach.php';
+                                break;
+                            case 'create_book':
+                                include 'create_book.php'; 
                                 break;                            
                             // Thêm các case khác cho các trang khác
                             default:

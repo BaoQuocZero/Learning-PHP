@@ -1,4 +1,4 @@
-<!-- index.php -->
+<!-- getSach.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +9,15 @@
 </head>
 <body>
     <div class="container mt-4">
-        <!-- <h1 class="text-center">Quản lý Sách</h1> -->
 
-        <!-- <h2 class="mt-4">Danh sách Sách</h2> -->
+        <!-- Nút Thêm Sách -->
+        <!-- <a href="create_book.php" class="btn btn-success mb-3">Thêm Sách</a> -->
+
         <table class="table table-bordered mt-3">
             <thead class="thead-dark">
                 <tr>
                     <th>Hình Ảnh</th>
-                    <th>ID</th>
-                    <!-- <th>Mã Loại</th> -->
-                    <th>Tên Sách</th>
-                    <th>Tác Giả</th>
-                    <!-- <th>Mô Tả</th> -->
-                    
-                    <!-- <th>Số Trang</th> -->
-                    <th>Giá</th>
-                    <th>Số Lượng</th>
+                    <th>Nội Dung</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,15 +41,24 @@
                 $result = $conn->query("SELECT * FROM sach");
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td><img src='hinhanh/" . $row['HINH_SACH'] . "' width='50'></td>";
-                    echo "<td>" . $row['ID_SACH'] . "</td>";
-                    // echo "<td>" . $row['MA_LOAI'] . "</td>";
-                    echo "<td>" . $row['TEN_SACH'] . "</td>";
-                    echo "<td>" . $row['TAC_GIA'] . "</td>";
-                    // echo "<td>" . $row['MO_TA'] . "</td>";                    
-                    // echo "<td>" . $row['SO_TRANG'] . "</td>";
-                    echo "<td>" . $row['GIA'] . "</td>";
-                    echo "<td>" . $row['SO_LUONG'] . "</td>";
+                    // Cột Hình Ảnh
+                    echo "<td><img src='hinhanh/" . $row['HINH_SACH'] . "' width='100'></td>";
+                    // Cột Nội Dung
+                    echo "<td style='text-align: left;'>";
+                    echo "<strong>Tên Sách:</strong> " . $row['TEN_SACH'] . "<br>";
+                    echo "<strong>Tác Giả:</strong> " . $row['TAC_GIA'] . "<br>";
+                    echo "<strong>Mô tả:</strong> " . $row['MO_TA'] . "<br>";
+                    echo "<strong>Số trang:</strong> " . $row['SO_TRANG'] . "<br>";
+                    echo "<strong>Số lượng:</strong> " . $row['SO_LUONG'] . "<br>";
+                    echo "<strong>Giá:</strong> " . number_format($row['GIA'], 0, ',', '.') . " VND<br>";
+
+                    // Các nút hành động căn phải
+                    echo "<div style='text-align: right;'>";
+                    echo "<a href='edit_book.php?edit=" . $row['ID_SACH'] . "' class='btn btn-warning btn-sm mt-2'>Sửa</a> ";
+                    echo "<a href='?delete=" . $row['ID_SACH'] . "' class='btn btn-danger btn-sm mt-2'>Xóa</a>";
+                    echo "</div>";
+
+                    echo "</td>";
                     echo "</tr>";
                 }
                 ?>
