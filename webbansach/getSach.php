@@ -38,7 +38,7 @@
                 }
 
                 // Hiển thị danh sách sách
-                $result = $conn->query("SELECT * FROM sach");
+                $result = $conn->query("SELECT s.*, ls.* FROM sach s JOIN loai_sanh ls ON ls.MA_LOAI = s.MA_LOAI");
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     // Cột Hình Ảnh
@@ -46,6 +46,7 @@
                     // Cột Nội Dung
                     echo "<td style='text-align: left;'>";
                     echo "<strong>Tên Sách:</strong> " . $row['TEN_SACH'] . "<br>";
+                    echo "<strong>Loại Sách:</strong> " . $row['TEN_LOAI'] . "<br>";
                     echo "<strong>Tác Giả:</strong> " . $row['TAC_GIA'] . "<br>";
                     echo "<strong>Mô tả:</strong> " . $row['MO_TA'] . "<br>";
                     echo "<strong>Số trang:</strong> " . $row['SO_TRANG'] . "<br>";
