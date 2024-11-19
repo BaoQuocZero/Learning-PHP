@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sách hay</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
     <div class="container mt-4">
 
@@ -44,7 +46,13 @@
                 echo '<h5 class="card-title">' . $row['TEN_SACH'] . '</h5>';
                 echo '<p class="card-text"><strong>Loại Sách:</strong> ' . $row['TEN_LOAI'] . '</p>';
                 echo '<p class="card-text"><strong>Tác Giả:</strong> ' . $row['TAC_GIA'] . '</p>';
-                echo '<p class="card-text"><strong>Mô tả:</strong> ' . $row['MO_TA'] . '</p>';
+                echo '<p class="card-text"><strong>Mô tả:</strong> ';
+                
+                echo '<span class="short-desc" style="display: block; overflow: hidden; text-overflow: ellipsis; line-height: 1.5em; max-height: 4.5em;">' . $row['MO_TA'] . '</span>';
+                echo '<span class="full-desc" style="display: none;">' . $row['MO_TA'] . '</span>';
+                echo ' <button class="btn btn-link btn-sm toggle-desc">Xem thêm</button>';
+                echo '</p>';
+
                 echo '<p class="card-text"><strong>Số trang:</strong> ' . $row['SO_TRANG'] . '</p>';
                 echo '<p class="card-text"><strong>Số lượng:</strong> ' . $row['SO_LUONG'] . '</p>';
                 echo '<p class="card-text"><strong>Giá:</strong> ' . number_format($row['GIA'], 0, ',', '.') . ' VND</p>';
@@ -64,5 +72,29 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButtons = document.querySelectorAll('.toggle-desc');
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const cardText = this.parentElement;
+                const shortDesc = cardText.querySelector('.short-desc');
+                const fullDesc = cardText.querySelector('.full-desc');
+
+                if (fullDesc.style.display === 'none') {
+                    fullDesc.style.display = 'block';
+                    shortDesc.style.display = 'none';
+                    this.textContent = 'Thu gọn';
+                } else {
+                    fullDesc.style.display = 'none';
+                    shortDesc.style.display = 'block';
+                    this.textContent = 'Xem thêm';
+                }
+            });
+        });
+    });
+    </script>
+
 </body>
+
 </html>
