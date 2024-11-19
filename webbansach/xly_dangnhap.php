@@ -16,6 +16,7 @@ if (isset($_POST['sbmDN'])) {
     $username = mysqli_real_escape_string($conn, $_POST['txtTDNhap']);
     $password = mysqli_real_escape_string($conn, $_POST['pswMKhau']);
     // mysqli_real_escape_string: Ngăn ngừa SQL Injection bằng cách xử lý các ký tự đặc biệt trong chuỗi đầu vào.
+    $hashed_password = md5($password); // Mã hóa mật khẩu người dùng nhập bằng MD5
 
     // Truy vấn cơ sở dữ liệu để kiểm tra tên đăng nhập và mật khẩu
     $query = "SELECT * FROM nguoi_dung WHERE USERNAME = '$username'";
@@ -27,7 +28,7 @@ if (isset($_POST['sbmDN'])) {
         $row = mysqli_fetch_assoc($result);
 
         // Kiểm tra mật khẩu (có thể bạn sử dụng hash mật khẩu trong thực tế)
-        if ($row['PASSWORD'] === $password) {
+        if ($row['PASSWORD'] === $hashed_password) {
             // Đăng nhập thành công
             $_SESSION['username'] = $username;  // Lưu tên người dùng vào session
             echo "Đăng nhập thành công! Chào mừng, " . $username;
