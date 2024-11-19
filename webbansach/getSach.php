@@ -39,7 +39,7 @@
                 }
                 echo '<div class="col-md-6 mb-3">'; // Mỗi sách chiếm 6 cột (50% chiều rộng)
                 echo '<div class="card" style="width: 100%;">';
-                echo '<img src="hinhanh/' . $row['HINH_SACH'] . '" class="card-img-top" width="100" alt="Hình Sách">';
+                echo '<div><img src="hinhanh/' . $row['HINH_SACH'] . '" class="card-img-top" style="height: 200px; width: auto; max-width: 100%;" alt="Hình Sách"></div>';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row['TEN_SACH'] . '</h5>';
                 echo '<p class="card-text"><strong>Loại Sách:</strong> ' . $row['TEN_LOAI'] . '</p>';
@@ -55,6 +55,7 @@
                 echo '</div>'; // col-md-6
                 $counter++;
             }
+                       
             ?>
         </div> <!-- row -->
 
