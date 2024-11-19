@@ -6,6 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sách hay</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .short-desc {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.5em;
+        max-height: 4.5em;
+    }
+
+    .full-desc {
+        display: none;
+    }
+
+    /* Đảm bảo ảnh giữ tỷ lệ đúng và có chiều cao cố định */
+    .card-img-top {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        /* Giữ tỷ lệ ảnh, cắt phần dư */
+    }
+
+    .card-body {
+        text-align: initial;
+    }
+
+    .right {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        gap: 5px;
+    }
+    </style>
+</head>
 </head>
 
 <body>
@@ -56,8 +91,10 @@
                 echo '<p class="card-text"><strong>Số trang:</strong> ' . $row['SO_TRANG'] . '</p>';
                 echo '<p class="card-text"><strong>Số lượng:</strong> ' . $row['SO_LUONG'] . '</p>';
                 echo '<p class="card-text"><strong>Giá:</strong> ' . number_format($row['GIA'], 0, ',', '.') . ' VND</p>';
+                echo '<div class="right">';
                 echo '<a href="edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>';
-                echo ' <a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>';
+                echo '<a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>';
+                echo '</div>';
                 echo '</div>'; // card-body
                 echo '</div>'; // card
                 echo '</div>'; // col-md-6

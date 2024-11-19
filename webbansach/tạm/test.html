@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="col-md-6 mb-3">'
-        <div class="card" style="width: 100%;">
-        <div><img src="hinhanh/' . $row['HINH_SACH'] . '" class="card-img-top" style="height: 200px; width: auto; max-width: 100%;" alt="Hình Sách"></div>
-        <div class="card-body">
-        <h5 class="card-title">' . $row['TEN_SACH'] . '</h5>
-        <p class="card-text"><strong>Loại Sách:</strong> ' . $row['TEN_LOAI'] . '</p>
-        <p class="card-text"><strong>Tác Giả:</strong> ' . $row['TAC_GIA'] . '</p>
-        <p class="card-text"><strong>Mô tả:</strong> ';
-        
-        <span class="short-desc" style="display: block; overflow: hidden; text-overflow: ellipsis; line-height: 1.5em; max-height: 4.5em;">' . $row['MO_TA'] . '</span>
-        <span class="full-desc" style="display: none;">' . $row['MO_TA'] . '</span>'
-         <button class="btn btn-link btn-sm toggle-desc">Xem thêm</button>'
-        </p>'
+    <title>Chi Tiết Sách</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .short-desc {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.5em;
+            max-height: 4.5em;
+        }
 
-        <p class="card-text"><strong>Số trang:</strong> ' . $row['SO_TRANG'] . '</p>
-        <p class="card-text"><strong>Số lượng:</strong> ' . $row['SO_LUONG'] . '</p>
-        <p class="card-text"><strong>Giá:</strong> ' . number_format($row['GIA'], 0, ',', '.') . ' VND</p>
-        <a href="edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>
-         <a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>
+        .full-desc {
+            display: none;
+        }
+
+        /* Đảm bảo ảnh giữ tỷ lệ đúng và có chiều cao cố định */
+        .card-img-top {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            /* Giữ tỷ lệ ảnh, cắt phần dư */
+        }
+
+        .right {
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Sách 1 -->
+            <div class="col-md-6 mb-3">
+                <div class="card" style="width: 100%;">
+                    <img src="Em la Nha.jpg" class="card-img-top" alt="Hình Sách">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sách: Cuốn Sách A</h5>
+                        <p class="card-text"><strong>Loại Sách:</strong> Văn học</p>
+                        <p class="card-text"><strong>Tác Giả:</strong> Nguyễn Văn A</p>
+                        <p class="card-text">
+                            <strong>Mô tả:</strong>
+                            <span class="short-desc">Đây là phần mô tả ngắn gọn của sách. Nội dung rất hấp dẫn...</span>
+                            <span class="full-desc">Đây là phần mô tả đầy đủ của sách. Nội dung sách kể về một câu
+                                chuyện...</span>
+                            <button class="btn btn-link btn-sm toggle-desc">Xem thêm</button>
+                        </p>
+                        <p class="card-text"><strong>Số trang:</strong> 300</p>
+                        <p class="card-text"><strong>Số lượng:</strong> 50</p>
+                        <p class="card-text"><strong>Giá:</strong> 150,000 VND</p>
+                        <div class="right">
+                            <a href="edit_book.html" class="btn btn-warning btn-sm">Sửa</a>
+                            <a href="#" class="btn btn-danger btn-sm">Xóa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.toggle-desc').forEach(button => {
+            button.addEventListener('click', () => {
+                const cardBody = button.closest('.card-body');
+                const shortDesc = cardBody.querySelector('.short-desc');
+                const fullDesc = cardBody.querySelector('.full-desc');
+
+                if (shortDesc.style.display === 'none') {
+                    shortDesc.style.display = 'block';
+                    fullDesc.style.display = 'none';
+                    button.textContent = 'Xem thêm';
+                } else {
+                    shortDesc.style.display = 'none';
+                    fullDesc.style.display = 'block';
+                    button.textContent = 'Thu gọn';
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
