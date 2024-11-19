@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="col-md-6 mb-3">'
+        <div class="card" style="width: 100%;">
+        <div><img src="hinhanh/' . $row['HINH_SACH'] . '" class="card-img-top" style="height: 200px; width: auto; max-width: 100%;" alt="Hình Sách"></div>
+        <div class="card-body">
+        <h5 class="card-title">' . $row['TEN_SACH'] . '</h5>
+        <p class="card-text"><strong>Loại Sách:</strong> ' . $row['TEN_LOAI'] . '</p>
+        <p class="card-text"><strong>Tác Giả:</strong> ' . $row['TAC_GIA'] . '</p>
+        <p class="card-text"><strong>Mô tả:</strong> ';
+        
+        <span class="short-desc" style="display: block; overflow: hidden; text-overflow: ellipsis; line-height: 1.5em; max-height: 4.5em;">' . $row['MO_TA'] . '</span>
+        <span class="full-desc" style="display: none;">' . $row['MO_TA'] . '</span>'
+         <button class="btn btn-link btn-sm toggle-desc">Xem thêm</button>'
+        </p>'
+
+        <p class="card-text"><strong>Số trang:</strong> ' . $row['SO_TRANG'] . '</p>
+        <p class="card-text"><strong>Số lượng:</strong> ' . $row['SO_LUONG'] . '</p>
+        <p class="card-text"><strong>Giá:</strong> ' . number_format($row['GIA'], 0, ',', '.') . ' VND</p>
+        <a href="edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>
+         <a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>
+        </div>
+        </div>
+        </div>
+</body>
+</html>

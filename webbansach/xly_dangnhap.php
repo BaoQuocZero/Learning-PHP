@@ -17,6 +17,8 @@ if (isset($_POST['sbmDN'])) {
     $password = mysqli_real_escape_string($conn, $_POST['pswMKhau']);
     // mysqli_real_escape_string: Ngăn ngừa SQL Injection bằng cách xử lý các ký tự đặc biệt trong chuỗi đầu vào.
     $hashed_password = md5($password); // Mã hóa mật khẩu người dùng nhập bằng MD5
+    // Hiển thị qua alert
+    echo "<script>alert('hashed_password: $hashed_password');</script>";
 
     // Truy vấn cơ sở dữ liệu để kiểm tra tên đăng nhập và mật khẩu
     $query = "SELECT * FROM nguoi_dung WHERE USERNAME = '$username'";
