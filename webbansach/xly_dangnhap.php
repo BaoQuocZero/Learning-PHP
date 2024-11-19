@@ -38,6 +38,7 @@ if (isset($_POST['sbmDN'])) {
             // Mật khẩu không đúng
             echo "Mật khẩu không đúng!";
         }
+        print_r($_SESSION); // Hiển thị tất cả session hiện tại
     } else {
         // Tên đăng nhập không tồn tại
         echo "Tên đăng nhập không đúng!";

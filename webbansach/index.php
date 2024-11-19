@@ -28,7 +28,11 @@
         <table width="90%" border="1" cellspacing="0" bordercolor="#003300" cellpadding="0"
             style="box-shadow: #6C0 0px 30px 150px;">
             <!-- Header -->
-            <?php include 'header.php'?>
+            <?php include 'header.php';
+            session_start();
+            // print_r($_SESSION); // Hiển thị tất cả session hiện tại            
+            ?>
+
             <tr bgcolor="#92D84E">
                 <td colspan="3">
                     <table border="0" width="100%" cellpadding="0" cellspacing="0">
