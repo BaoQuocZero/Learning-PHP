@@ -52,7 +52,7 @@
                     <table border="1" cellspacing="0" width="100%" cellpadding="0" bordercolor="#003300">
                         <tr>
                             <th>
-                                <font color="#FF6600"><a href="index.php">Trang chủ</a></font>
+                                <font color="#FF6600"><a href="index.php">Quay lại Trang chủ</a></font>
                             </th>
                         </tr>
                     </table>
