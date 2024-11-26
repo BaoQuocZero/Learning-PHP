@@ -21,34 +21,37 @@
         display: none;
     }
 
-    /* Đảm bảo ảnh giữ tỷ lệ đúng và có chiều cao cố định */
+    .card {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+    }
+
     .card-img-top {
         height: 200px;
-        width: 100%;
         object-fit: cover;
-        /* Giữ tỷ lệ ảnh, cắt phần dư */
+        width: 100%;
     }
 
     .card-body {
-        text-align: initial;
+        flex: 2;
+        text-align: left;
+    }
+
+    .image-container {
+        flex: 1;
     }
 
     .right {
-        width: 100%;
         display: flex;
         justify-content: right;
         gap: 5px;
     }
     </style>
 </head>
-</head>
 
 <body>
     <div class="container mt-4">
-
-        <!-- Nút Thêm Sách -->
-        <!-- <a href="create_book.php" class="btn btn-success mb-3">Thêm Sách</a> -->
-
         <div class="row">
             <?php
             // Kết nối cơ sở dữ liệu
@@ -70,24 +73,22 @@
             $result = $conn->query("SELECT s.*, ls.* FROM sach s JOIN loai_sanh ls ON ls.MA_LOAI = s.MA_LOAI");
             $counter = 0;
             while ($row = $result->fetch_assoc()) {
-                // Mỗi sách sẽ được hiển thị trong một cột
+                // Mỗi sách chiếm 6 cột (50% chiều rộng)
                 if ($counter % 2 == 0 && $counter != 0) {
                     echo '</div><div class="row">'; // Kết thúc hàng cũ và bắt đầu hàng mới
                 }
-                echo '<div class="col-md-6 mb-3">'; // Mỗi sách chiếm 6 cột (50% chiều rộng)
-                echo '<div class="card" style="width: 100%;">';
-                echo '<div><img src="hinhanh/' . $row['HINH_SACH'] . '" class="card-img-top" style="height: 200px; width: auto; max-width: 100%;" alt="Hình Sách"></div>';
+                echo '<div class="col-md-6 mb-3">'; 
+                echo '<div class="card">';
+                echo '<div class="image-container"><img src="hinhanh/' . $row['HINH_SACH'] . '" class="card-img-top" alt="Hình Sách"></div>';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row['TEN_SACH'] . '</h5>';
                 echo '<p class="card-text"><strong>Loại Sách:</strong> ' . $row['TEN_LOAI'] . '</p>';
                 echo '<p class="card-text"><strong>Tác Giả:</strong> ' . $row['TAC_GIA'] . '</p>';
-                echo '<p class="card-text"><strong>Mô tả:</strong> ';
-                
-                echo '<span class="short-desc" style="display: block; overflow: hidden; text-overflow: ellipsis; line-height: 1.5em; max-height: 4.5em;">' . $row['MO_TA'] . '</span>';
-                echo '<span class="full-desc" style="display: none;">' . $row['MO_TA'] . '</span>';
+                echo '<p class="card-text"><strong>Mô tả:</strong>';
+                echo '<span class="short-desc">' . $row['MO_TA'] . '</span>';
+                echo '<span class="full-desc">' . $row['MO_TA'] . '</span>';
                 echo ' <button class="btn btn-link btn-sm toggle-desc">Xem thêm</button>';
                 echo '</p>';
-
                 echo '<p class="card-text"><strong>Số trang:</strong> ' . $row['SO_TRANG'] . '</p>';
                 echo '<p class="card-text"><strong>Số lượng:</strong> ' . $row['SO_LUONG'] . '</p>';
                 echo '<p class="card-text"><strong>Giá:</strong> ' . number_format($row['GIA'], 0, ',', '.') . ' VND</p>';
@@ -100,10 +101,8 @@
                 echo '</div>'; // col-md-6
                 $counter++;
             }
-                       
             ?>
         </div> <!-- row -->
-
     </div> <!-- container -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -131,7 +130,6 @@
         });
     });
     </script>
-
 </body>
 
 </html>

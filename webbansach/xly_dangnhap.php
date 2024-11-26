@@ -33,6 +33,7 @@ if (isset($_POST['sbmDN'])) {
         if ($row['PASSWORD'] === $hashed_password) {
             // Đăng nhập thành công
             $_SESSION['username'] = $username;  // Lưu tên người dùng vào session
+            $_SESSION['role'] = "user";
             echo "Đăng nhập thành công! Chào mừng, " . $username;
             // Chuyển hướng đến trang khác sau khi đăng nhập thành công (ví dụ: trang chủ)
             header('Location: index.php');  // Bạn có thể thay đổi URL này theo ý muốn
