@@ -19,6 +19,9 @@ if (session_status() === PHP_SESSION_NONE) {
             <td colspan="2"><a href="ThongTinUser.php">Xem thông tin tài khoản</a></td>
         </tr>
         <tr>
+            <td colspan="2"><a href="DoiMatKhau.php">Đổi mật khẩu</a></td>
+        </tr>
+        <tr>
             <td colspan="2"><a href="logout.php">Đăng xuất</a></td>
         </tr>
     </table>

@@ -68,7 +68,7 @@
                                 echo "<p>Nội dung không tồn tại.</p>";
                         }
                     } else 
-                        include 'profile.php'
+                        include 'change_password.php'
                 ?>
                     <!-- footer -->
                     <?php include 'footer.php'; ?>

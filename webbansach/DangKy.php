@@ -35,10 +35,10 @@
             <div class="mb-3">
                 <label for="quocgia" class="form-label">Quốc gia</label>
                 <select class="form-select" id="quocgia" name="quocgia">
-                    <option value="vn" selected>Viet Nam</option>
-                    <option value="cn">China</option>
-                    <option value="jp">Japan</option>
-                    <option value="k">Khác</option>
+                    <option value="Viet Nam" selected>Viet Nam</option>
+                    <option value="China">China</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Deutsches Reich">Deutsches Reich</option>
                 </select>
             </div>
 
