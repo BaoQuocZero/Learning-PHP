@@ -1,5 +1,7 @@
 <?php
-session_start(); // Bắt đầu session hoặc tiếp tục session hiện tại
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <td width="200" valign="top" bgcolor="#92D84E">
     <?php if (isset($_SESSION['username'])): ?>
@@ -14,7 +16,7 @@ session_start(); // Bắt đầu session hoặc tiếp tục session hiện tạ
             <td colspan="2">Xin chào: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></td>
         </tr>
         <tr>
-            <td colspan="2"><a href="profile.php">Xem thông tin tài khoản</a></td>
+            <td colspan="2"><a href="ThongTinUser.php">Xem thông tin tài khoản</a></td>
         </tr>
         <tr>
             <td colspan="2"><a href="logout.php">Đăng xuất</a></td>

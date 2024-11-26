@@ -87,7 +87,7 @@
                                 echo "<p>Nội dung không tồn tại.</p>";
                         }
                     } else 
-                        include 'getSach.php'
+                        include 'profile.php'
                 ?>
                     <!-- footer -->
                     <?php include 'footer.php'; ?>
