@@ -16,7 +16,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <td colspan="2">Xin chào: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></td>
         </tr>
         <tr>
-            <td colspan="2"><a href="ThongTinUser.php">Xem thông tin tài khoản</a></td>
+            <td colspan="2"><a href="views/ThongTinUser.php">Xem thông tin tài khoản</a></td>
         </tr>
         <tr>
             <td colspan="2"><a href="DoiMatKhau.php">Đổi mật khẩu</a></td>

@@ -65,7 +65,7 @@ $conn->close();
                 <p><strong>Quốc gia:</strong> <?php echo htmlspecialchars($user['QUOCGIA']); ?></p>
                 <div class="text-center">
                     <?php if (!empty($user['HINHDAIDIEN'])): ?>
-                    <img src="<?php echo htmlspecialchars($user['HINHDAIDIEN']); ?>" alt="Ảnh đại diện"
+                    <img src="../<?php echo htmlspecialchars($user['HINHDAIDIEN']); ?>" alt="Ảnh đại diện"
                         class="img-thumbnail" style="max-width: 200px;">
                     <?php else: ?>
                     <p><em>Không có ảnh đại diện.</em></p>

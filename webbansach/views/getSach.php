@@ -73,7 +73,6 @@
             $result = $conn->query("SELECT s.*, ls.* FROM sach s JOIN loai_sanh ls ON ls.MA_LOAI = s.MA_LOAI");
             $counter = 0;
             while ($row = $result->fetch_assoc()) {
-                // Mỗi sách chiếm 6 cột (50% chiều rộng)
                 if ($counter % 2 == 0 && $counter != 0) {
                     echo '</div><div class="row">'; // Kết thúc hàng cũ và bắt đầu hàng mới
                 }
@@ -131,5 +130,4 @@
     });
     </script>
 </body>
-
 </html>

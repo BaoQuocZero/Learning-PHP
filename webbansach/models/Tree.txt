@@ -1,0 +1,39 @@
+project/
+│
+├── assets/              # Chứa các tài nguyên tĩnh (CSS, JS, hình ảnh)
+│   ├── css/             # Tệp CSS (style.css, custom.css,...)
+│   ├── js/              # Tệp JavaScript (main.js, helper.js,...)
+│   └── images/          # Hình ảnh sử dụng trong dự án
+│
+├── config/              # Chứa các tệp cấu hình
+│   ├── database.php     # Kết nối cơ sở dữ liệu
+│   └── constants.php    # Các hằng số dùng chung (URL, API keys,...)
+│
+├── controllers/         # Chứa các logic xử lý cho ứng dụng
+│   └── userController.php
+│   └── productController.php
+│
+├── models/              # Chứa các lớp hoặc hàm truy vấn dữ liệu
+│   └── userModel.php
+│   └── productModel.php
+│
+├── views/               # Chứa các tệp giao diện (HTML, PHP)
+│   ├── layouts/         # Layout chung (header.php, footer.php,...)
+│   ├── pages/           # Các trang riêng biệt (home.php, about.php,...)
+│   └── components/      # Các phần giao diện nhỏ tái sử dụng (navbar.php,...)
+│
+├── core/                # Chứa các tệp xử lý cốt lõi
+│   ├── router.php       # Định tuyến URL
+│   ├── session.php      # Xử lý session
+│   └── helpers.php      # Các hàm tiện ích
+│
+├── public/              # Thư mục truy cập công khai (entry point)
+│   ├── index.php        # Tệp chính (route mọi yêu cầu vào đây)
+│   └── .htaccess        # Cấu hình rewrite URL
+│
+├── uploads/             # Chứa tệp tải lên (hình ảnh, tài liệu,...)
+│
+├── logs/                # Chứa các tệp log (lỗi, truy cập,...)
+│   └── error.log
+│
+└── README.md            # Hướng dẫn sử dụng dự án
