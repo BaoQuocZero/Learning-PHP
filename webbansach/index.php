@@ -68,7 +68,6 @@
                 </td>
                 <td valign="top" bgcolor="#FFFFFF"
                     style="text-align: center; vertical-align: middle; background-color: white;">
-
                     <?php
                     if (isset($_GET['page'])) {
                         $page = $_GET['page'];
