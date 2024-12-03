@@ -28,7 +28,7 @@
         <table width="90%" border="1" cellspacing="0" bordercolor="#003300" cellpadding="0"
             style="box-shadow: #6C0 0px 30px 150px;">
             <!-- Header -->
-            <?php include 'header.php';
+            <?php include '../header.php';
             session_start();
             // print_r($_SESSION); // Hiển thị tất cả session hiện tại            
             ?>
@@ -52,7 +52,7 @@
                     <table border="1" cellspacing="0" width="100%" cellpadding="0" bordercolor="#003300">
                         <tr>
                             <th>
-                                <font color="#FF6600"><a href="index.php">Trang chủ</a></font>
+                                <font color="#FF6600"><a href="../index.php">Trang chủ</a></font>
                             </th>
                         </tr>
                     </table>
@@ -71,4 +71,4 @@
                         include 'change_password.php'
                 ?>
                     <!-- footer -->
-                    <?php include 'footer.php'; ?>
+                    <?php include '../footer.php'; ?>

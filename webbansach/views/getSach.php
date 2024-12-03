@@ -92,7 +92,7 @@
                 echo '<p class="card-text"><strong>Số lượng:</strong> ' . $row['SO_LUONG'] . '</p>';
                 echo '<p class="card-text"><strong>Giá:</strong> ' . number_format($row['GIA'], 0, ',', '.') . ' VND</p>';
                 echo '<div class="right">';
-                echo '<a href="edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>';
+                echo '<a href="views/edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>';
                 echo '<a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>';
                 echo '</div>';
                 echo '</div>'; // card-body
@@ -130,4 +130,5 @@
     });
     </script>
 </body>
+
 </html>
