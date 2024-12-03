@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2024 lúc 08:14 AM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.0.30
+-- Host: 127.0.0.1
+-- Generation Time: Dec 03, 2024 at 09:32 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `online_shop`
+-- Database: `online_shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,7 +35,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chat`
+-- Table structure for table `chat`
 --
 
 CREATE TABLE `chat` (
@@ -49,7 +49,7 @@ CREATE TABLE `chat` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chi_tiet_gio_hang`
+-- Table structure for table `chi_tiet_gio_hang`
 --
 
 CREATE TABLE `chi_tiet_gio_hang` (
@@ -63,7 +63,7 @@ CREATE TABLE `chi_tiet_gio_hang` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `gio_hang`
+-- Table structure for table `gio_hang`
 --
 
 CREATE TABLE `gio_hang` (
@@ -75,7 +75,7 @@ CREATE TABLE `gio_hang` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `loai_sanh`
+-- Table structure for table `loai_sanh`
 --
 
 CREATE TABLE `loai_sanh` (
@@ -84,7 +84,7 @@ CREATE TABLE `loai_sanh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `loai_sanh`
+-- Dumping data for table `loai_sanh`
 --
 
 INSERT INTO `loai_sanh` (`MA_LOAI`, `TEN_LOAI`) VALUES
@@ -97,7 +97,7 @@ INSERT INTO `loai_sanh` (`MA_LOAI`, `TEN_LOAI`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nguoi_dung`
+-- Table structure for table `nguoi_dung`
 --
 
 CREATE TABLE `nguoi_dung` (
@@ -111,7 +111,7 @@ CREATE TABLE `nguoi_dung` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sach`
+-- Table structure for table `sach`
 --
 
 CREATE TABLE `sach` (
@@ -127,7 +127,7 @@ CREATE TABLE `sach` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sach`
+-- Dumping data for table `sach`
 --
 
 INSERT INTO `sach` (`ID_SACH`, `MA_LOAI`, `TEN_SACH`, `TAC_GIA`, `MO_TA`, `HINH_SACH`, `SO_TRANG`, `GIA`, `SO_LUONG`) VALUES
@@ -139,24 +139,24 @@ INSERT INTO `sach` (`ID_SACH`, `MA_LOAI`, `TEN_SACH`, `TAC_GIA`, `MO_TA`, `HINH_
 (10, 'LS004', 'Sách của bao', 'Bảo', 'DDD', 'giai_tich_1.jpg', 1, 1, 1);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`USER_ADMIN`);
 
 --
--- Chỉ mục cho bảng `chat`
+-- Indexes for table `chat`
 --
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`USERNAME`,`USER_ADMIN`,`ID_CHAT`),
   ADD KEY `FK_CHAT2` (`USER_ADMIN`);
 
 --
--- Chỉ mục cho bảng `chi_tiet_gio_hang`
+-- Indexes for table `chi_tiet_gio_hang`
 --
 ALTER TABLE `chi_tiet_gio_hang`
   ADD PRIMARY KEY (`USERNAME`,`ID_SACH`,`ID_GIO_HANG`,`ID_CHI_TIET_GIO_HANG`),
@@ -164,60 +164,60 @@ ALTER TABLE `chi_tiet_gio_hang`
   ADD KEY `FK_CHI_TIET_GIO_HANG3` (`ID_GIO_HANG`);
 
 --
--- Chỉ mục cho bảng `gio_hang`
+-- Indexes for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
   ADD PRIMARY KEY (`ID_GIO_HANG`),
   ADD KEY `FK_DUYET` (`USERNAME`);
 
 --
--- Chỉ mục cho bảng `loai_sanh`
+-- Indexes for table `loai_sanh`
 --
 ALTER TABLE `loai_sanh`
   ADD PRIMARY KEY (`MA_LOAI`);
 
 --
--- Chỉ mục cho bảng `nguoi_dung`
+-- Indexes for table `nguoi_dung`
 --
 ALTER TABLE `nguoi_dung`
   ADD PRIMARY KEY (`USERNAME`);
 
 --
--- Chỉ mục cho bảng `sach`
+-- Indexes for table `sach`
 --
 ALTER TABLE `sach`
   ADD PRIMARY KEY (`ID_SACH`),
   ADD KEY `FK_THUOC` (`MA_LOAI`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `gio_hang`
+-- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
   MODIFY `ID_GIO_HANG` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `sach`
+-- AUTO_INCREMENT for table `sach`
 --
 ALTER TABLE `sach`
   MODIFY `ID_SACH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `chat`
+-- Constraints for table `chat`
 --
 ALTER TABLE `chat`
   ADD CONSTRAINT `FK_CHAT` FOREIGN KEY (`USERNAME`) REFERENCES `nguoi_dung` (`USERNAME`),
   ADD CONSTRAINT `FK_CHAT2` FOREIGN KEY (`USER_ADMIN`) REFERENCES `admin` (`USER_ADMIN`);
 
 --
--- Các ràng buộc cho bảng `chi_tiet_gio_hang`
+-- Constraints for table `chi_tiet_gio_hang`
 --
 ALTER TABLE `chi_tiet_gio_hang`
   ADD CONSTRAINT `FK_CHI_TIET_GIO_HANG` FOREIGN KEY (`USERNAME`) REFERENCES `nguoi_dung` (`USERNAME`),
@@ -225,13 +225,13 @@ ALTER TABLE `chi_tiet_gio_hang`
   ADD CONSTRAINT `FK_CHI_TIET_GIO_HANG3` FOREIGN KEY (`ID_GIO_HANG`) REFERENCES `gio_hang` (`ID_GIO_HANG`);
 
 --
--- Các ràng buộc cho bảng `gio_hang`
+-- Constraints for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
   ADD CONSTRAINT `FK_DUYET` FOREIGN KEY (`USERNAME`) REFERENCES `nguoi_dung` (`USERNAME`);
 
 --
--- Các ràng buộc cho bảng `sach`
+-- Constraints for table `sach`
 --
 ALTER TABLE `sach`
   ADD CONSTRAINT `FK_THUOC` FOREIGN KEY (`MA_LOAI`) REFERENCES `loai_sanh` (`MA_LOAI`);
