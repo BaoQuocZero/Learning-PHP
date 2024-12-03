@@ -64,6 +64,9 @@
                         <tr>
                             <td><a href="?page=create_book">Thêm Sách</a></td>
                         </tr>
+                        <tr>
+                            <td><a href="?page=getGioHang">Giỏ hàng</a></td>
+                        </tr>
                     </table>
                 </td>
                 <td valign="top" bgcolor="#FFFFFF"
@@ -84,6 +87,10 @@
 
                             case 'create_book':
                                 include 'views/create_book.php';
+                                break;
+                            
+                            case 'getGioHang':
+                                include 'views/getGioHang.php';
                                 break;
 
                             // Thêm các case khác nếu cần
