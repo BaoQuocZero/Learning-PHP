@@ -37,7 +37,7 @@
                 <td colspan="3">
                     <table border="0" width="100%" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td width="80"><a id="thuong" href="">Trang chủ</a></td>
+                            <td width="80"><a id="thuong" href="./">Trang chủ</a></td>
                             <td>
                                 <font color="#FF6600">
                                     <marquee>Cùng bạn đi tìm tri thức!</marquee>

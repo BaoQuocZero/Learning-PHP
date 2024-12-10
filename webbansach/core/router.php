@@ -24,6 +24,13 @@
                                 include 'views/profile.php';
                                 break;
 
+<<<<<<< HEAD
+                            case 'logout':
+                                include 'views/logout.php';
+                                break;
+
+=======
+>>>>>>> 241fe5b55f4431084a04ec2e836ab87306f0f38d
                             // Thêm các case khác nếu cần
                             default:
                                 echo "<p>Nội dung không tồn tại.</p>";
