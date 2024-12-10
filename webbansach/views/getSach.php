@@ -58,13 +58,18 @@
                 session_start();                
             }
             $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
-            ?>
-            <?php
+
             // Kết nối cơ sở dữ liệu
             $conn = new mysqli("localhost", "root", "", "online_shop");
             if ($conn->connect_error) {
                 die("Kết nối thất bại: " . $conn->connect_error);
             }
+
+            // Xác định số sách mỗi trang
+            $limit = 2;  // Số lượng sách mỗi trang
+            // Lấy giá trị page_num từ URL nếu có, nếu không thì mặc định là trang 1
+            $page_num = isset($_GET['page_num']) ? (int)$_GET['page_num'] : 1;
+            $offset = ($page_num - 1) * $limit;  // Tính toán offset cho truy vấn SQL
 
             // Xử lý xóa sách
             if (isset($_GET['delete'])) {
@@ -75,8 +80,9 @@
                 $stmt->close();
             }
 
-            // Hiển thị danh sách sách
-            $result = $conn->query("SELECT s.*, ls.* FROM sach s JOIN loai_sanh ls ON ls.MA_LOAI = s.MA_LOAI");
+            // Hiển thị danh sách sách với phân trang
+            $query = "SELECT s.*, ls.* FROM sach s JOIN loai_sanh ls ON ls.MA_LOAI = s.MA_LOAI LIMIT $limit OFFSET $offset";
+            $result = $conn->query($query);
             $counter = 0;
             while ($row = $result->fetch_assoc()) {
                 if ($counter % 2 == 0 && $counter != 0) {
@@ -110,6 +116,21 @@
                 echo '</div>'; // col-md-6
                 $counter++;
             }
+
+            // Tính toán số lượng trang
+            $totalResult = $conn->query("SELECT COUNT(*) AS total FROM sach");
+            $totalRow = $totalResult->fetch_assoc();
+            $totalBooks = $totalRow['total'];
+            $totalPages = ceil($totalBooks / $limit);  // Tính tổng số trang
+
+            // Hiển thị các liên kết phân trang
+            echo '<nav><ul class="pagination">';
+            for ($i = 1; $i <= $totalPages; $i++) {
+                $activeClass = ($i == $page_num) ? 'active' : '';  // Nếu là trang hiện tại thì thêm class active
+                echo '<li class="page-item ' . $activeClass . '"><a class="page-link" href="?page=getSach&page_num=' . $i . '">' . $i . '</a></li>';
+            }
+            echo '</ul></nav>';
+
             ?>
         </div> <!-- row -->
     </div> <!-- container -->

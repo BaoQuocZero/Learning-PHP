@@ -6,7 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>--oO sachhay.com Oo--</title>
     <link rel="stylesheet" type="text/css" href="css.css" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
     .odd {
         background-color: #FFBE98;
@@ -32,7 +34,8 @@
                if (session_status() === PHP_SESSION_NONE) {
                 session_start();                
             }
-            $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';      
+            $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin'; 
+            $isLogin = isset($_SESSION['username']);      
             ?>
 
             <tr bgcolor="#92D84E">
@@ -57,9 +60,12 @@
                                 <font color="#FF6600">Quản lý sách</font>
                             </th>
                         </tr>
-                        <tr>
-                            <td><a href="?page=DangKy">Đăng ký</a></td>
-                        </tr>
+                        <?php
+                        if (!$isLogin) {
+                        echo '<tr><td><a href="?page=DangKy">Đăng ký</a></td></tr>';
+                        }
+                        ?>
+
                         <tr>
                             <td><a href="?page=getSach">Tất cả Sách</a></td>
                         </tr>
@@ -86,8 +92,8 @@
                                 break;
 
                             case 'getSach':
-                                include 'views/getSach.php';
-                                break;
+                                include 'views/getSach.php';  // Gọi tệp getSach.php mà không cần thêm query string
+                                break;                                
 
                             case 'create_book':
                                 include 'views/create_book.php';
@@ -98,9 +104,23 @@
                                 break;
 
                             // Thêm các case khác nếu cần
+                            // Thêm các case khác nếu cần
                             default:
-                                echo "<p>Nội dung không tồn tại.</p>";
-                                break;
+                            echo "
+                            <div class='container mt-5'>
+                                <div class='text-center'>
+                                    <h3 class='display-4 text-danger'>404 Không tìm thấy</h3>
+                                    <p class='lead text-muted'>Chào mừng, lữ khách. Bạn đã đến một trang không tồn tại, một nơi mà nội dung từng tồn tại—hoặc có thể chưa bao giờ tồn tại. Hãy dành thời gian này để dừng lại và suy ngẫm.</p>
+                                </div>
+                                <div class='card p-4'>
+                                    <p class='text-justify'>Hít một hơi thật sâu và thở ra từ từ. Lưu ý không gian xung quanh bạn, trống rỗng nhưng đầy khả năng. Hãy tưởng tượng rằng mỗi lần thở ra sẽ xóa tan sự bối rối, tạo không gian cho sự sáng suốt.</p>
+                                    <p class='text-justify'>Khi bạn ngồi với trang giấy trắng này, hãy biết rằng việc ở đây là điều bình thường. Bạn đã khám phá ra điều gì đó bất ngờ và đó là một phần của hành trình. Hãy nhẹ nhàng giải tỏa mọi sự thất vọng, biết rằng mọi con đường đều dẫn đến một nơi nào đó—kể cả con đường này.</p>
+                                    <p class='text-justify'>Bây giờ, khi bạn đã sẵn sàng, hãy từ từ quay lại tìm kiếm của mình. Tin rằng đúng trang, đúng thông tin, sẽ xuất hiện khi bạn cần. Hít một hơi thật sâu nữa và khi bạn thở ra, hãy nhấp vào nút quay lại hoặc thử lại. Internet, giống như cuộc sống, luôn đầy bất ngờ.</p>
+                                    <p class='text-justify'>Cảm ơn bạn đã dành thời gian bình tĩnh này. Hành trình của bạn vẫn tiếp tục.</p>
+                                </div>
+                            </div>
+                            ";
+                            break;                        
                         }
                     } else {
                         include 'views/getSach.php'; // Trang mặc định

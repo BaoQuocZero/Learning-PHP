@@ -13,7 +13,10 @@ if (session_status() === PHP_SESSION_NONE) {
             </th>
         </tr>
         <tr>
-            <td colspan="2">Xin chào: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></td>
+            <td colspan="2">Xin chào:
+                <strong><?php echo htmlspecialchars($_SESSION['role']);?>: </strong>
+                <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
+            </td>
         </tr>
         <tr>
             <td colspan="2"><a href="views/ThongTinUser.php">Xem thông tin tài khoản</a></td>
