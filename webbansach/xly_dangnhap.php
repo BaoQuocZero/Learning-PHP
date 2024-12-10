@@ -1,6 +1,8 @@
 <!-- xly_dangnhap.php -->
 <?php
-session_start(); // Bắt đầu phiên làm việc
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();                
+}
 
 // Tạo kết nối MySQL
 $conn = new mysqli("localhost", "root", "", "online_shop");

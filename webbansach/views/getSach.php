@@ -54,6 +54,12 @@
     <div class="container mt-4">
         <div class="row">
             <?php
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();                
+            }
+            $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
+            ?>
+            <?php
             // Kết nối cơ sở dữ liệu
             $conn = new mysqli("localhost", "root", "", "online_shop");
             if ($conn->connect_error) {
@@ -93,8 +99,11 @@
                 echo '<p class="card-text"><strong>Giá:</strong> ' . number_format($row['GIA'], 0, ',', '.') . ' VND</p>';
                 echo '<div class="right">';
                 echo '<a href="views/add_cart.php?add=' . $row['ID_SACH'] . '" class="btn btn-success btn-sm">Thêm giỏ hàng</a>';
-                echo '<a href="views/edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>';
-                echo '<a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>';
+                // Kiểm tra nếu người dùng là admin thì hiển thị các nút Sửa và Xóa
+                if ($isAdmin) {
+                    echo '<a href="views/edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>';
+                    echo '<a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>';
+                }
                 echo '</div>';
                 echo '</div>'; // card-body
                 echo '</div>'; // card

@@ -29,8 +29,10 @@
             style="box-shadow: #6C0 0px 30px 150px;">
             <!-- Header -->
             <?php include 'header.php';
-            session_start();
-            // print_r($_SESSION); // Hiển thị tất cả session hiện tại            
+               if (session_status() === PHP_SESSION_NONE) {
+                session_start();                
+            }
+            $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';      
             ?>
 
             <tr bgcolor="#92D84E">
@@ -61,9 +63,11 @@
                         <tr>
                             <td><a href="?page=getSach">Tất cả Sách</a></td>
                         </tr>
-                        <tr>
-                            <td><a href="?page=create_book">Thêm Sách</a></td>
-                        </tr>
+                        <?php
+                        if ($isAdmin) {
+                        echo '<tr><td><a href="?page=create_book">Thêm Sách</a></td></tr>';
+                        }
+                        ?>
                         <tr>
                             <td><a href="?page=getGioHang">Giỏ hàng</a></td>
                         </tr>
