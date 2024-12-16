@@ -14,7 +14,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </tr>
         <tr>
             <td colspan="2">Xin chào:
-                <strong><?php echo htmlspecialchars($_SESSION['role']);?>: </strong>
+                <strong><?php echo htmlspecialchars($_SESSION['role']); ?>: </strong>
                 <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
             </td>
         </tr>
@@ -53,3 +53,9 @@ if (session_status() === PHP_SESSION_NONE) {
     </form>
     <?php endif; ?>
 </td>
+<tr bgcolor="#92D84E">
+    <td colspan="3" align="center">
+        CopyRight&copy; sachhay.com <br />
+        Design by TrucMaiPham
+    </td>
+</tr>

@@ -11,147 +11,155 @@
 
 <body>
     <div class="container my-4">
-        <h1 class="text-center">Hướng Dẫn Bootstrap</h1>
-        <p class="text-muted">Hướng dẫn này giới thiệu các thành phần và tiện ích thường dùng trong Bootstrap.</p>
+        <div class="row">
+            <h1 class="text-center">Hướng Dẫn Bootstrap</h1>
+            <p class="text-muted">Hướng dẫn này giới thiệu các thành phần và tiện ích thường dùng trong Bootstrap.</p>
 
-        <!-- Bố cục -->
-        <section class="mb-4">
-            <h2>2. Các lớp container trong Bootstrap</h2>
-            <p>Các lớp container này giúp điều chỉnh chiều rộng của các phần tử tùy theo kích thước màn hình:</p>
+            <!-- Bố cục -->
+            <section class="mb-4">
+                <h2>2. Các lớp container trong Bootstrap</h2>
+                <p>Các lớp container này giúp điều chỉnh chiều rộng của các phần tử tùy theo kích thước màn hình:</p>
 
-            <!-- Container với chiều rộng thay đổi tùy theo kích thước màn hình -->
-            <div class="container-sm bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint nhỏ (small)</div>
-            <div class="container-md bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint trung bình (medium)</div>
-            <div class="container-lg bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint lớn (large)</div>
-            <div class="container-xl bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint rất lớn (extra large)</div>
-            <div class="container-xxl bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint cực lớn (extra extra large)
-            </div>
-        </section>
-        <!-- Bố cục -->
-        <section class="mb-4">
-            <h2>1. Bố cục (Layout)</h2>
-            <p>Sử dụng hệ thống lưới (grid system) để thiết kế giao diện phản hồi:</p>
-            <div class="row">
-                <div class="col-md-4 bg-primary text-white text-center">Cột 1</div>
-                <div class="col-md-4 bg-success text-white text-center">Cột 2</div>
-                <div class="col-md-4 bg-danger text-white text-center">Cột 3</div>
-            </div>
-        </section>
-
-        <!-- Căn chỉnh (Flex Utilities) -->
-        <section class="mb-4">
-            <h2>2. Căn chỉnh (Flex Utilities)</h2>
-            <p>Sử dụng tiện ích Flex để căn chỉnh:</p>
-            <div class="d-flex justify-content-around align-items-center bg-light p-3 mb-3">
-                <div class="p-2 bg-primary text-white">Mục 1</div>
-                <div class="p-2 bg-success text-white">Mục 2</div>
-                <div class="p-2 bg-danger text-white">Mục 3</div>
-            </div>
-            <div class="d-flex flex-column align-items-start bg-light p-3 mb-3">
-                <div class="p-2 bg-warning text-dark">Cột 1</div>
-                <div class="p-2 bg-info text-dark">Cột 2</div>
-                <div class="p-2 bg-secondary text-white">Cột 3</div>
-            </div>
-            <div class="d-flex justify-content-between align-items-stretch bg-light p-3">
-                <div class="p-2 bg-dark text-white">Giãn 1</div>
-                <div class="p-2 bg-light border">Giãn 2</div>
-                <div class="p-2 bg-primary text-white">Giãn 3</div>
-            </div>
-        </section>
-
-        <!-- Chữ (Typography) -->
-        <section class="mb-4">
-            <h2>3. Chữ (Typography)</h2>
-            <p>Bootstrap cung cấp các tiện ích định dạng chữ:</p>
-            <p class="text-primary">Chữ màu xanh</p>
-            <p class="fw-bold">Chữ in đậm</p>
-            <p class="fst-italic">Chữ in nghiêng</p>
-        </section>
-
-        <!-- Nút (Buttons) -->
-        <section class="mb-4">
-            <h2>4. Nút (Buttons)</h2>
-            <p>Sử dụng các lớp để tạo kiểu cho nút:</p>
-            <button class="btn btn-primary">Nút chính</button>
-            <button class="btn btn-secondary">Nút phụ</button>
-            <button class="btn btn-success">Nút thành công</button>
-            <button class="btn btn-danger">Nút nguy hiểm</button>
-            <button class="btn btn-warning">Nút cảnh báo</button>
-            <button class="btn btn-info">Nút thông tin</button>
-            <button class="btn btn-light">Nút sáng</button>
-            <button class="btn btn-dark">Nút tối</button>
-            <button class="btn btn-outline-primary">Nút viền xanh</button>
-        </section>
-
-        <!-- Biểu mẫu (Forms) -->
-        <section class="mb-4">
-            <h2>5. Biểu mẫu (Forms)</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail" class="form-label">Địa chỉ Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Nhập email">
+                <!-- Container với chiều rộng thay đổi tùy theo kích thước màn hình -->
+                <div class="container-sm bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint nhỏ (small)</div>
+                <div class="container-md bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint trung bình (medium)</div>
+                <div class="container-lg bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint lớn (large)</div>
+                <div class="container-xl bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint rất lớn (extra large)
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword" class="form-label">Mật khẩu</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Nhập mật khẩu">
+                <div class="container-xxl bg-light p-3 mb-2">Chiều rộng 100% cho đến breakpoint cực lớn (extra extra
+                    large)
                 </div>
-                <button type="submit" class="btn btn-primary">Gửi</button>
-            </form>
-        </section>
+            </section>
+            <!-- Bố cục -->
+            <section class="mb-4">
+                <h2>1. Bố cục (Layout)</h2>
+                <p>Sử dụng hệ thống lưới (grid system) để thiết kế giao diện phản hồi:</p>
+                <div class="row">
+                    <div class="col-md-4 bg-primary text-white text-center">Cột 1</div>
+                    <div class="col-md-4 bg-success text-white text-center">Cột 2</div>
+                    <div class="col-md-4 bg-danger text-white text-center">Cột 3</div>
+                </div>
+            </section>
 
-        <!-- Bảng (Tables) -->
-        <section class="mb-4">
-            <h2>6. Bảng (Tables)</h2>
-            <p>Sử dụng Bootstrap để làm đẹp bảng:</p>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Họ</th>
-                        <th>Tên</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyễn</td>
-                        <td>Văn A</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Trần</td>
-                        <td>Thị B</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>Cách gộp ô bằng <code>rowspan</code> và <code>colspan</code>:</p>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Thông Tin</th>
-                        <th>Chi Tiết</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="2">1</td>
-                        <td>Tên</td>
-                        <td>Nguyễn Văn A</td>
-                    </tr>
-                    <tr>
-                        <td>Địa chỉ</td>
-                        <td>123 Đường A, Thành phố B</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td colspan="2">Trần Thị B - Địa chỉ: 456 Đường C, Thành phố D</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>Để bo viền toàn bộ bảng hoặc các ô, sử dụng lớp <code>table-bordered</code>:</p>
-            <ul>
-                <li><code>table-bordered</code>: Bo viền tất cả các ô trong bảng.</li>
+            <!-- Căn chỉnh (Flex Utilities) -->
+            <section class="mb-4">
+                <h2>2. Căn chỉnh (Flex Utilities)</h2>
+                <p>Sử dụng tiện ích Flex để căn chỉnh:</p>
+                <div class="d-flex justify-content-around align-items-center bg-light p-3 mb-3">
+                    <div class="p-2 bg-primary text-white">Mục 1</div>
+                    <div class="p-2 bg-success text-white">Mục 2</div>
+                    <div class="p-2 bg-danger text-white">Mục 3</div>
+                </div>
+                <div class="d-flex flex-column align-items-start bg-light p-3 mb-3">
+                    <div class="p-2 bg-warning text-dark">Cột 1</div>
+                    <div class="p-2 bg-info text-dark">Cột 2</div>
+                    <div class="p-2 bg-secondary text-white">Cột 3</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-stretch bg-light p-3">
+                    <div class="p-2 bg-dark text-white">Giãn 1</div>
+                    <div class="p-2 bg-light border">Giãn 2</div>
+                    <div class="p-2 bg-primary text-white">Giãn 3</div>
+                </div>
+            </section>
+
+            <!-- Chữ (Typography) -->
+            <section class="mb-4">
+                <h2>3. Chữ (Typography)</h2>
+                <p>Bootstrap cung cấp các tiện ích định dạng chữ:</p>
+                <p class="text-primary">Chữ màu xanh</p>
+                <p class="fw-bold">Chữ in đậm</p>
+                <p class="fst-italic">Chữ in nghiêng</p>
+            </section>
+
+            <section class="mb-4">
+                <h2>Căn chữ</h2>
+                <p class="text-left">Left aligned text on all viewport sizes.</p>
+                <p class="text-center">Center aligned text on all viewport sizes.</p>
+                <p class="text-right">Right aligned text on all viewport sizes.</p>
+
+                <p class="text-sm-left">Left aligned text on viewports sized SM (small) or wider.</p>
+                <p class="text-md-left">Left aligned text on viewports sized MD (medium) or wider.</p>
+                <p class="text-lg-left">Left aligned text on viewports sized LG (large) or wider.</p>
+                <p class="text-xl-left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
+            </section>
+
+            <section class="mb-4">
+                <h2>Ảnh</h2>
+                <p>???????</p>
+                <img src="./hinhanh//images.jpg" class="img-fluid" alt="Responsive image">
+                <p>
+                    Ngoài tiện ích border-radius , bạn có thể sử dụng .img-thumbnailđể tạo cho hình ảnh đường viền tròn
+                    1px.
+                </p>
+                <img src="./hinhanh//images.jpg" alt="..." class="img-thumbnail">
+                <p>
+                    Căn chỉnh hình ảnh bằng các lớp float trợ giúp hoặc các lớp căn chỉnh văn bản . blockHình ảnh -level
+                    có
+                    thể được căn giữa bằng cách sử dụng lớp .mx-autotiện ích lề .
+                </p>
+                <img src="./hinhanh//images.jpg" class="rounded float-start" alt="...">
+                <img src="./hinhanh//images.jpg" class="rounded float-end" alt="...">
+                <img src="./hinhanh//images.jpg" class="rounded mx-auto d-block" alt="...">
+            </section>
+
+            <!-- Nút (Buttons) -->
+            <section class="mb-4">
+                <h2>4. Nút (Buttons)</h2>
+                <p>Sử dụng các lớp để tạo kiểu cho nút:</p>
+                <button class="btn btn-primary">Nút chính</button>
+                <button class="btn btn-secondary">Nút phụ</button>
+                <button class="btn btn-success">Nút thành công</button>
+                <button class="btn btn-danger">Nút nguy hiểm</button>
+                <button class="btn btn-warning">Nút cảnh báo</button>
+                <button class="btn btn-info">Nút thông tin</button>
+                <button class="btn btn-light">Nút sáng</button>
+                <button class="btn btn-dark">Nút tối</button>
+                <button class="btn btn-outline-primary">Nút viền xanh</button>
+            </section>
+
+            <!-- Biểu mẫu (Forms) -->
+            <section class="mb-4">
+                <h2 class="mb-3">5. Biểu mẫu (Forms)</h2>
+                <form>
+                    <!-- Email Input -->
+                    <div class="mb-3">
+                        <label for="exampleInputEmail" class="form-label">Địa chỉ Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail" placeholder="Nhập email">
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="mb-3">
+                        <label for="exampleInputPassword" class="form-label">Mật khẩu</label>
+                        <input type="password" class="form-control" id="exampleInputPassword"
+                            placeholder="Nhập mật khẩu">
+                    </div>
+
+                    <!-- Select -->
+                    <div class="mb-3">
+                        <label for="exampleSelect" class="form-label">Chọn quyền của bạn</label>
+                        <select class="form-select" id="exampleSelect">
+                            <option selected>Chọn một quyền</option>
+                            <option value="1">Quản trị viên</option>
+                            <option value="2">Nhân viên</option>
+                            <option value="3">Khách hàng</option>
+                        </select>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck">
+                        <label class="form-check-label" for="exampleCheck">Lưu thông tin đăng nhập</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Gửi</button>
+                </form>
+            </section>
+
+            <!-- Bảng (Tables) -->
+            <section class="mb-4">
+                <h2>6. Bảng (Tables)</h2>
+                <p>Sử dụng Bootstrap để làm đẹp bảng:</p>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -173,76 +181,126 @@
                         </tr>
                     </tbody>
                 </table>
-                <li>Thêm lớp <code>border</code> hoặc <code>border-dark</code> để tùy chỉnh màu viền.</li>
-                <table class="table table-dark">
+                <p>Cách gộp ô bằng <code>rowspan</code> và <code>colspan</code>:</p>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th>#</th>
+                            <th>Thông Tin</th>
+                            <th>Chi Tiết</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td rowspan="2">1</td>
+                            <td>Tên</td>
+                            <td>Nguyễn Văn A</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>Địa chỉ</td>
+                            <td>123 Đường A, Thành phố B</td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td>2</td>
+                            <td colspan="2">Trần Thị B - Địa chỉ: 456 Đường C, Thành phố D</td>
                         </tr>
                     </tbody>
                 </table>
-            </ul>
-        </section>
+                <p>Để bo viền toàn bộ bảng hoặc các ô, sử dụng lớp <code>table-bordered</code>:</p>
+                <ul>
+                    <li><code>table-bordered</code>: Bo viền tất cả các ô trong bảng.</li>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Họ</th>
+                                <th>Tên</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nguyễn</td>
+                                <td>Văn A</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Trần</td>
+                                <td>Thị B</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <li>Thêm lớp <code>border</code> hoặc <code>border-dark</code> để tùy chỉnh màu viền.</li>
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </ul>
+            </section>
 
-        <!-- Cảnh báo (Alerts) -->
-        <section class="mb-4">
-            <h2>7. Cảnh báo (Alerts)</h2>
-            <p>Hiển thị thông báo bằng cách sử dụng:</p>
-            <div class="alert alert-warning">Đây là cảnh báo màu vàng!</div>
-            <div class="alert alert-success">Đây là cảnh báo thành công!</div>
-        </section>
+            <!-- Cảnh báo (Alerts) -->
+            <section class="mb-4">
+                <h2>7. Cảnh báo (Alerts)</h2>
+                <p>Hiển thị thông báo bằng cách sử dụng:</p>
+                <div class="alert alert-warning">Đây là cảnh báo màu vàng!</div>
+                <div class="alert alert-success">Đây là cảnh báo thành công!</div>
+            </section>
 
-        <!-- Thanh Điều Hướng (Navigation Bar) -->
-        <section class="mb-4">
-            <h2>8. Thanh Điều Hướng (Navigation Bar)</h2>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Trang Chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Giới Thiệu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Liên Hệ</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </section>
+            <!-- Thanh Điều Hướng (Navigation Bar) -->
+            <section class="mb-4">
+                <h2>8. Thanh Điều Hướng (Navigation Bar)</h2>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Trang Chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Giới Thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Liên Hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </section>
 
-        <!-- Chân Trang (Footer) -->
-        <footer class="text-center mt-4">
-            <p class="text-muted">&copy; 2024 Hướng Dẫn Bootstrap</p>
-        </footer>
+            <!-- Chân Trang (Footer) -->
+            <footer class="text-center mt-4">
+                <p class="text-muted">&copy; 2024 Hướng Dẫn Bootstrap</p>
+            </footer>
+        </div>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->

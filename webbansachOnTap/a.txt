@@ -1,0 +1,45 @@
+Các ký tự định dạng trong bind_param:
+s - String
+Dùng cho kiểu dữ liệu chuỗi, bao gồm các kiểu dữ liệu như tên, mô tả, email, v.v.
+Ví dụ:
+$stmt->bind_param("s", $name);
+
+i - Integer
+Dùng cho kiểu dữ liệu số nguyên, chẳng hạn như ID, tuổi, số lượng, v.v.
+Ví dụ:
+$stmt->bind_param("i", $age);
+
+d - Double
+Dùng cho kiểu dữ liệu số thực (floating-point numbers), ví dụ như giá trị thập phân, tiền tệ, điểm số, v.v.
+Ví dụ:
+$stmt->bind_param("d", $price);
+
+b - Blob
+Dùng cho kiểu dữ liệu nhị phân (binary data), như hình ảnh, tệp tin, dữ liệu nhị phân (Blob).
+Ví dụ:
+$stmt->bind_param("b", $image);
+
+n - Null
+Dùng khi tham số có giá trị NULL. Nếu bạn muốn chèn giá trị NULL vào cơ sở dữ liệu, bạn có thể sử dụng ký tự n.
+Ví dụ:
+$stmt->bind_param("n", $null_value);
+
+l - Long
+Dùng cho kiểu dữ liệu số nguyên dài (long integer). Tuy nhiên, trong hầu hết các trường hợp, bạn sẽ sử dụng i cho số nguyên.
+Ví dụ:
+$stmt->bind_param("l", $long_number);
+
+L - Unsigned Long
+Dùng cho kiểu dữ liệu số nguyên không dấu (unsigned long).
+Ví dụ:
+$stmt->bind_param("L", $unsigned_long);
+
+T - Date/Datetime
+Dùng cho kiểu dữ liệu ngày/thời gian. Bạn có thể sử dụng để truyền giá trị ngày (DATE), thời gian (TIME), hoặc ngày và giờ (DATETIME).
+Ví dụ:
+$stmt->bind_param("T", $date);
+
+Y - Time
+Dùng cho kiểu dữ liệu thời gian.
+Ví dụ:
+$stmt->bind_param("Y", $time);

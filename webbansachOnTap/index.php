@@ -31,11 +31,9 @@
             style="box-shadow: #6C0 0px 30px 150px;">
             <!-- Header -->
             <?php include 'header.php';
-               if (session_status() === PHP_SESSION_NONE) {
-                session_start();                
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
             }
-            $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin'; 
-            $isLogin = isset($_SESSION['username']);      
             ?>
 
             <tr bgcolor="#92D84E">
@@ -60,22 +58,11 @@
                                 <font color="#FF6600">Quản lý sách</font>
                             </th>
                         </tr>
-                        <?php
-                        if (!$isLogin) {
-                        echo '<tr><td><a href="?page=DangKy">Đăng ký</a></td></tr>';
-                        }
-                        ?>
-
                         <tr>
                             <td><a href="?page=getSach">Tất cả Sách</a></td>
                         </tr>
-                        <?php
-                        if ($isAdmin) {
-                        echo '<tr><td><a href="?page=create_book">Thêm Sách</a></td></tr>';
-                        }
-                        ?>
                         <tr>
-                            <td><a href="?page=getGioHang">Giỏ hàng</a></td>
+                            <td><a href="?page=themSach">Thêm sách</a></td>
                         </tr>
                     </table>
                 </td>
@@ -87,26 +74,18 @@
 
                         // Kiểm tra giá trị của $page
                         switch ($page) {
-                            case 'DangKy':
-                                include 'views/DangKy.php';
-                                break;
-
                             case 'getSach':
-                                include 'views/getSach.php';  // Gọi tệp getSach.php mà không cần thêm query string
-                                break;                                
-
-                            case 'create_book':
-                                include 'views/create_book.php';
+                                include 'getSach.php';
                                 break;
-                            
-                            case 'getGioHang':
-                                include 'views/getGioHang.php';
+                            case 'themSach':
+                                include 'themSach.php';
                                 break;
-
-                            // Thêm các case khác nếu cần
+                            case 'suaSach':
+                                include 'suaSach.php';
+                                break;
                             // Thêm các case khác nếu cần
                             default:
-                            echo "
+                                echo "
                             <div class='container mt-5'>
                                 <div class='text-center'>
                                     <h3 class='display-4 text-danger'>404 Không tìm thấy</h3>
@@ -120,10 +99,10 @@
                                 </div>
                             </div>
                             ";
-                            break;                        
+                                break;
                         }
                     } else {
-                        include 'views/getSach.php'; // Trang mặc định
+                        include 'getSach.php'; // Trang mặc định
                     }
                     ?>
                     <!-- footer -->
