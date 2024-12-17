@@ -2,6 +2,8 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+$username = isset($_COOKIE['username']) ? $_COOKIE['username'] : null;
+$role = isset($_COOKIE['role']) ? $_COOKIE['role'] : null;
 ?>
 <td width="200" valign="top" bgcolor="#92D84E">
     <?php if (isset($_SESSION['username'])): ?>
@@ -19,13 +21,19 @@ if (session_status() === PHP_SESSION_NONE) {
             </td>
         </tr>
         <tr>
-            <td colspan="2"><a href="views/ThongTinUser.php">Xem thông tin tài khoản</a></td>
+            <td colspan="2">Xin chào bằng cookie:
+                <strong><?php echo htmlspecialchars($role); ?>: </strong>
+                <strong><?php echo htmlspecialchars($username); ?></strong>
+            </td>
         </tr>
         <tr>
-            <td colspan="2"><a href="views/DoiMatKhau.php">Đổi mật khẩu</a></td>
+            <td colspan="2"><a href="ThongTinUser.php">Xem thông tin tài khoản</a></td>
         </tr>
         <tr>
-            <td colspan="2"><a href="views/logout.php">Đăng xuất</a></td>
+            <td colspan="2"><a href="DoiMatKhau.php">Đổi mật khẩu</a></td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="logout.php">Đăng xuất</a></td>
         </tr>
     </table>
     <?php else: ?>
@@ -47,7 +55,8 @@ if (session_status() === PHP_SESSION_NONE) {
             </tr>
             <tr>
                 <td><input type="submit" name="sbmDN" value="Đăng nhập" /></td>
-                <td><input type="reset" name="rsHB" value="Hủy bỏ" /></td>
+                <!-- <td><input type="reset" name="rsHB" value="Hủy bỏ" /></td> -->
+                <td><a href="?page=dangKy" class="btn btn-success btn-sm">Đăng ký</a></td>
             </tr>
         </table>
     </form>

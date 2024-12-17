@@ -64,6 +64,9 @@
                         <tr>
                             <td><a href="?page=themSach">Thêm sách</a></td>
                         </tr>
+                        <tr>
+                            <td><a href="?page=gioHang">Giỏ hàng</a></td>
+                        </tr>
                     </table>
                 </td>
                 <td valign="top" bgcolor="#FFFFFF"
@@ -82,6 +85,15 @@
                                 break;
                             case 'suaSach':
                                 include 'suaSach.php';
+                                break;
+                            case 'dangKy':
+                                include 'dangKy.php';
+                                break;
+                            case 'gioHang':
+                                include 'gioHang.php';
+                                break;
+                            case 'themGioHang':
+                                include 'themGioHang.php';
                                 break;
                             // Thêm các case khác nếu cần
                             default:

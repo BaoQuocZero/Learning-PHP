@@ -64,8 +64,14 @@ if (isset($_GET['delete'])) {
         </tr>
         <tr>
             <td><strong>Hành động</strong></td>
-            <td> <a href="views/edit_book.php?edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a></td>
-            <td><a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a> </td>
+            <td colspan="2">
+                <a href="/themGioHang.php?themGio=' . $row['ID_SACH'] . '" class="btn btn-success btn-sm">
+                    Thêm vào giỏ hàng</a>
+                <a href="?page=suaSach&edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>
+                <!-- <a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>  -->
+                <a href="javascript:void(0);" onclick="confirmDelete(' . $row['ID_SACH'] . ')"
+                    class="btn btn-danger btn-sm">Xóa</a>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -114,9 +120,14 @@ while ($row = $result->fetch_assoc()) {
     echo '    </tr>';
     echo '    <tr>';
     echo '        <td><strong>Hành động</strong></td>';
-    echo '        <td><a href="?page=suaSach&edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a></td>';
-    // echo '        <td><a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a> </td>'; //Nút xóa cũ không cần xác nhận xóa
-    echo '        <td><a href="javascript:void(0);" onclick="confirmDelete(' . $row['ID_SACH'] . ')" class="btn btn-danger btn-sm">Xóa</a></td>';
+    echo '    <td colspan="2">';
+    echo '    <a href="?page=themGioHang&themGio=' . $row['ID_SACH'] . '" class="btn btn-success btn-sm">';
+    echo '        Thêm vào giỏ hàng</a>';
+    echo '    <a href="?page=suaSach&edit=' . $row['ID_SACH'] . '" class="btn btn-warning btn-sm">Sửa</a>';
+    echo '    <!-- <a href="?delete=' . $row['ID_SACH'] . '" class="btn btn-danger btn-sm">Xóa</a>  -->';
+    echo '    <a href="javascript:void(0);" onclick="confirmDelete(' . $row['ID_SACH'] . ')"';
+    echo '        class="btn btn-danger btn-sm">Xóa</a>';
+    echo '    </td>';
     echo '    </tr>';
 }
 ;
