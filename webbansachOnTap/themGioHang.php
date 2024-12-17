@@ -3,13 +3,17 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
+// Kiểm tra quyền
+if ($_SESSION['role'] === 'admin') {
+    echo "<script>alert('Admin không có giỏ hàng!'); window.location.href='index.php';</script>";
+    exit();
+}
 // Kết nối cơ sở dữ liệu
 include 'ketNoi.php';
 
 // Kiểm tra nếu người dùng đã đăng nhập
 if (!isset($_SESSION['username'])) {
-    echo "<script>alert('Vui lòng đăng nhập trước khi thêm vào giỏ hàng!'); window.location.href='login.php';</script>";
+    echo "<script>alert('Vui lòng đăng nhập trước khi thêm vào giỏ hàng!'); window.location.href='index.php';</script>";
     exit();
 }
 

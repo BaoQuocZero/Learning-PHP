@@ -8,17 +8,23 @@ $result = $conn->query($query);
 
 // Xử lý xóa sách
 if (isset($_GET['delete'])) {
-    $id_sach = $_GET['delete']; // Lấy ID sách từ tham số GET
-    $stmt = $conn->prepare("DELETE FROM sach WHERE ID_SACH=?"); // Câu lệnh SQL xóa sách
-    $stmt->bind_param("i", $id_sach); // Gán giá trị ID_SACH vào câu lệnh
-    $stmt->execute(); // Thực thi câu lệnh
-    $stmt->close(); // Đóng câu lệnh
+    // Kiểm tra quyền
+    if ($_SESSION['role'] !== 'admin') {
+        echo "<script>alert('Bạn không có quyền!'); window.location.href='index.php';</script>";
+        exit();
+    } else {
+        $id_sach = $_GET['delete']; // Lấy ID sách từ tham số GET
+        $stmt = $conn->prepare("DELETE FROM sach WHERE ID_SACH=?"); // Câu lệnh SQL xóa sách
+        $stmt->bind_param("i", $id_sach); // Gán giá trị ID_SACH vào câu lệnh
+        $stmt->execute(); // Thực thi câu lệnh
+        $stmt->close(); // Đóng câu lệnh
 
-    //Xóa thành công nhưng phải tải lại mới thấy
-    //Thêm lệnh này để tải lại =)
-    // Chuyển hướng về trang index.php sau khi xóa thành công
-    header("Location: index.php");
-    exit(); // Dừng thực thi mã tiếp theo
+        //Xóa thành công nhưng phải tải lại mới thấy
+        //Thêm lệnh này để tải lại =)
+        // Chuyển hướng về trang index.php sau khi xóa thành công
+        header("Location: index.php");
+        exit(); // Dừng thực thi mã tiếp theo
+    }
 }
 
 ?>

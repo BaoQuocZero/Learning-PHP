@@ -2,6 +2,11 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+// Kiểm tra quyền
+if ($_SESSION['role'] !== 'admin') {
+    echo "<script>alert('Bạn không có quyền!'); window.location.href='index.php';</script>";
+    exit();
+}
 include 'ketNoi.php';
 
 // Lấy ID_SACH từ tham số URL

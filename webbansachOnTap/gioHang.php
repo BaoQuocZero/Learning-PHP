@@ -37,6 +37,12 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+// Kiểm tra quyền
+if ($_SESSION['role'] === 'admin') {
+    echo "<script>alert('Admin không có giỏ hàng!'); window.location.href='index.php';</script>";
+    exit();
+}
+
 // Lấy thông tin người dùng từ session
 $username = $_SESSION['username'];
 
